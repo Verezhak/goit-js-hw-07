@@ -1,11 +1,16 @@
-function getElementWidth(content, padding, border) {
-     const contentWidth = Number.parseFloat(content);
-    const paddingWidth = Number.parseFloat(padding);
-    const borderWidth = Number.parseFloat(border);
-    const totalWidth = contentWidth + paddingWidth * 2 + borderWidth * 2;
-       return totalWidth;
-}
+const nameInput = document.getElementById('name-input');
+nameInput.classList.add('input')
+const nameOutput = document.getElementById('name-output');
 
-console.log(getElementWidth("50px", "8px", "4px"));
-console.log(getElementWidth("60px", "12px", "8.5px"));
-console.log(getElementWidth("200px", "0px", "0px"));
+const greeting = document.querySelector('h1');
+greeting.classList.add('hello');
+
+nameInput.addEventListener('input', event => {
+  const inputValue = event.target.value.trim(); 
+
+  if (inputValue === '' || inputValue===' ') {
+    nameOutput.textContent = 'Anonymous'; 
+  } else {
+    nameOutput.textContent = inputValue; 
+  }
+});
